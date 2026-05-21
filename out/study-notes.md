@@ -1,20 +1,21 @@
 # Code Study Notes: code-study-notes-repo
 
 - Repository: `/root/code-study-notes-repo`
-- Generated at: 2026-05-21 08:36 UTC
-- Files scanned: 14
-- Approx size: 38.4 KB
+- Generated at: 2026-05-21 08:45 UTC
+- Files scanned: 16
+- Approx size: 51.0 KB
 
 ## Project Overview
 
-This repository contains 14 scanned files. The dominant detected language is Python. The analyzer found 2 configuration files and 2 likely entry points.
+This repository contains 16 scanned files. The dominant detected language is Python. The analyzer found 2 configuration files and 2 likely entry points.
 
 ## Technology Stack
 
-- Python: 7 files (58.3%)
-- Markdown: 3 files (25.0%)
-- YAML: 1 files (8.3%)
-- Docker: 1 files (8.3%)
+- Python: 7 files (50.0%)
+- Markdown: 4 files (28.6%)
+- YAML: 1 files (7.1%)
+- Docker: 1 files (7.1%)
+- CSS: 1 files (7.1%)
 
 ## Key Configuration
 
@@ -42,12 +43,15 @@ This repository contains 14 scanned files. The dominant detected language is Pyt
 |   |-- report.py
 |   `-- web.py
 |-- docker-compose.yml
-`-- docs
-    |-- README.md
-    |-- examples
-    |   `-- sample-report.md
-    `-- tests
-        `-- smoke_test.py
+|-- docs
+|   |-- README.md
+|   |-- examples
+|   |   `-- sample-report.md
+|   `-- tests
+|       `-- smoke_test.py
+`-- open-design
+    |-- OPEN_DESIGN.md
+    `-- vercel-tokens.css
 ```
 
 ## Module Relationship Sketch
@@ -62,15 +66,18 @@ graph TD
   root --> n5["code_study_notes"]
   root --> n6["docker-compose.yml"]
   root --> n7["docs"]
-  n5 --> n8["__init__.py"]
-  n5 --> n9["__main__.py"]
-  n5 --> n10["analyzer.py"]
-  n5 --> n11["cli.py"]
-  n5 --> n12["report.py"]
-  n5 --> n13["web.py"]
-  n7 --> n14["README.md"]
-  n7 --> n15["examples"]
-  n7 --> n16["tests"]
+  root --> n8["open-design"]
+  n5 --> n9["__init__.py"]
+  n5 --> n10["__main__.py"]
+  n5 --> n11["analyzer.py"]
+  n5 --> n12["cli.py"]
+  n5 --> n13["report.py"]
+  n5 --> n14["web.py"]
+  n7 --> n15["README.md"]
+  n7 --> n16["examples"]
+  n7 --> n17["tests"]
+  n8 --> n18["OPEN_DESIGN.md"]
+  n8 --> n19["vercel-tokens.css"]
 ```
 
 ## Core Files To Read
