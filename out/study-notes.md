@@ -1,31 +1,38 @@
 # Code Study Notes: code-study-notes-repo
 
 - Repository: `/root/code-study-notes-repo`
-- Generated at: 2026-05-21 08:24 UTC
-- Files scanned: 11
-- Approx size: 32.5 KB
+- Generated at: 2026-05-21 08:36 UTC
+- Files scanned: 14
+- Approx size: 38.4 KB
 
 ## Project Overview
 
-This repository contains 11 scanned files. The dominant detected language is Python. The analyzer found 0 configuration files and 1 likely entry points.
+This repository contains 14 scanned files. The dominant detected language is Python. The analyzer found 2 configuration files and 2 likely entry points.
 
 ## Technology Stack
 
-- Python: 7 files (70.0%)
-- Markdown: 3 files (30.0%)
+- Python: 7 files (58.3%)
+- Markdown: 3 files (25.0%)
+- YAML: 1 files (8.3%)
+- Docker: 1 files (8.3%)
 
 ## Key Configuration
 
-- No standard configuration files were detected.
+- `Dockerfile` (Dockerfile)
+  - CMD ["python", "-m", "code_study_notes", "web", "--host", "0.0.0.0", "--port", "8765", "--out", "/app/out"]
+- `docker-compose.yml` (docker-compose.yml)
 
 ## Likely Entry Points
 
 - `code_study_notes/__main__.py`: conventional entry filename: __main__.py
+- `Dockerfile`: CMD ["python", "-m", "code_study_notes", "web", "--host", "0.0.0.0", "--port", "8765", "--out", "/app/out"]
 
 ## Directory Structure
 
 ```text
+|-- .dockerignore
 |-- .gitignore
+|-- Dockerfile
 |-- README.md
 |-- code_study_notes
 |   |-- __init__.py
@@ -34,6 +41,7 @@ This repository contains 11 scanned files. The dominant detected language is Pyt
 |   |-- cli.py
 |   |-- report.py
 |   `-- web.py
+|-- docker-compose.yml
 `-- docs
     |-- README.md
     |-- examples
@@ -47,23 +55,28 @@ This repository contains 11 scanned files. The dominant detected language is Pyt
 ```mermaid
 graph TD
   root["repo"]
-  root --> n1[".gitignore"]
-  root --> n2["README.md"]
-  root --> n3["code_study_notes"]
-  root --> n4["docs"]
-  n3 --> n5["__init__.py"]
-  n3 --> n6["__main__.py"]
-  n3 --> n7["analyzer.py"]
-  n3 --> n8["cli.py"]
-  n3 --> n9["report.py"]
-  n3 --> n10["web.py"]
-  n4 --> n11["README.md"]
-  n4 --> n12["examples"]
-  n4 --> n13["tests"]
+  root --> n1[".dockerignore"]
+  root --> n2[".gitignore"]
+  root --> n3["Dockerfile"]
+  root --> n4["README.md"]
+  root --> n5["code_study_notes"]
+  root --> n6["docker-compose.yml"]
+  root --> n7["docs"]
+  n5 --> n8["__init__.py"]
+  n5 --> n9["__main__.py"]
+  n5 --> n10["analyzer.py"]
+  n5 --> n11["cli.py"]
+  n5 --> n12["report.py"]
+  n5 --> n13["web.py"]
+  n7 --> n14["README.md"]
+  n7 --> n15["examples"]
+  n7 --> n16["tests"]
 ```
 
 ## Core Files To Read
 
+- `Dockerfile`
+- `docker-compose.yml`
 - `code_study_notes/__main__.py`
 - `code_study_notes/__init__.py`
 - `code_study_notes/analyzer.py`
@@ -75,13 +88,15 @@ graph TD
 ## Suggested Reading Route
 
 1. Read project overview first: README.md
-2. Trace likely runtime entry points: code_study_notes/__main__.py
-3. Open core modules next: code_study_notes/__main__.py, code_study_notes/__init__.py, code_study_notes/analyzer.py, code_study_notes/cli.py, code_study_notes/report.py, code_study_notes/web.py, docs/tests/smoke_test.py
-4. Skim tests, examples, and CI files to understand expected behavior.
+2. Review configuration and dependency files: Dockerfile, docker-compose.yml
+3. Trace likely runtime entry points: code_study_notes/__main__.py, Dockerfile
+4. Open core modules next: Dockerfile, docker-compose.yml, code_study_notes/__main__.py, code_study_notes/__init__.py, code_study_notes/analyzer.py, code_study_notes/cli.py, code_study_notes/report.py, code_study_notes/web.py
+5. Skim tests, examples, and CI files to understand expected behavior.
 
 ## Guessed Run Commands
 
-- `Look for README instructions or scripts in configuration files.`
+- `docker compose up --build`
+- `docker build -t app . && docker run --rm app`
 
 ## Follow-Up Questions
 
@@ -89,4 +104,3 @@ graph TD
 - Which configuration file defines the canonical way to run and test the project?
 - Where does control flow enter the application, and what modules does it call first?
 - Why does the project use multiple languages, and where is each language boundary?
-- No standard dependency files were found; how are dependencies installed?

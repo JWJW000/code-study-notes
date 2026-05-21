@@ -1,0 +1,10 @@
+services:
+  code-study-notes:
+    build: .
+    container_name: code-study-notes
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./out:/app/out
+      - ./workspace:/workspace:ro
+    restart: unless-stopped
